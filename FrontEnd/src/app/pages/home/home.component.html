@@ -4,7 +4,7 @@
   </div>
 
   <div  class="Cards">
-    <app-card *ngFor="let character of listCharacters"></app-card>
+    <app-card [character]="character" *ngFor="let character of listCharacters"></app-card>
   </div>
 </div>
 

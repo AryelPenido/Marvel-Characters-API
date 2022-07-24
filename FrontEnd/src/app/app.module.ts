@@ -8,6 +8,8 @@ import { CharacterDetailsComponent } from './pages/character-details/character-d
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

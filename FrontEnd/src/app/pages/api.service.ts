@@ -12,7 +12,7 @@ export class ApiService {
 
   baseUrl ='http://localhost:3000/api/characters/';
 
-  getCharacters(){
+  getCharacters(): Observable<any> {
     return this.http.get<any>(this.baseUrl)
     .pipe(map((data: any) => data.data.results))
   }

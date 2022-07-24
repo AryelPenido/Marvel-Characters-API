@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
 
   hoveringcharacter: boolean = false;
-  constructor() { }
+
+  @Input() character: any;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log("input", this.character)
+  }
+
+
+  getDetails(){
+    this.router.navigate(['character-details'], { state: { id: this.character.id } });
   }
 
 }
