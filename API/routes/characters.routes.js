@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     const urlString = 'https://gateway.marvel.com/v1/public/characters';
     const url = createUrl(urlString);
-  
     const params = Object.keys(req.query);
     params.forEach((param) => {
       if (req.query[param] !== '') {
@@ -25,7 +24,6 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const id = Number(req.params.id);
-  console.log(req.params);
   if (!Number.isNaN(id)) {
     const urlString = `https://gateway.marvel.com:443/v1/public/characters/${id}`;
     const url = createUrl(urlString);
@@ -46,8 +44,8 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/comics', async (req, res) => {
   const id = Number(req.params.id);
 
-  console.log(req.params);
   if (!Number.isNaN(id)) {
+    
     const urlString = `https://gateway.marvel.com:443/v1/public/characters/${id}/comics`;
     const url = createUrl(urlString);
     

@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl ='http://localhost:3000/api/characters/';
+  baseUrl ='http://localhost:3000/api/characters';
 
   getCharacters(): Observable<any> {
     return this.http.get<any>(this.baseUrl)
@@ -18,8 +18,17 @@ export class ApiService {
   }
 
   getCharacterById(id:number): Observable<any>{
-    return this.http.get<any>(this.baseUrl)
-    .pipe(map((data: any) => data.data.results))
+
+    return this.http.get<any>(`${this.baseUrl}?id=${id}`)
+    //.pipe(map((data: any) => data.data.results))
+
+
+
+  }
+
+  getComicsByCharacterId(id:number): Observable<any>{
+    console.log("chamou service",`${this.baseUrl}/${id}/comics`)
+    return this.http.get<any>(`${this.baseUrl}/${id}`).pipe(map((data: any) => data.data.results[0].comics.items))
 
   }
 }
