@@ -1,6 +1,11 @@
 <div class="content">
   <div class="filter">
-    <input type="text">
+    <p>Search for Character</p>
+    <select (change)="searchCharacter($event)">
+      <option  *ngFor="let character of listCharacters" [value]="character.id">
+        {{character.name}}
+      </option>
+  </select>
   </div>
 
   <div  class="Cards">

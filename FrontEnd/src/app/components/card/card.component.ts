@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log("input", this.character)
+
   }
 
 

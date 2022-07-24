@@ -2,6 +2,7 @@ import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-
-  oneCharacter: any;
-  characterForm: FormGroup =  new FormGroup({});
-
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.createForm();
+
     this.getAllCharacters();
 
 
@@ -32,16 +30,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  createForm(){
-    this.characterForm = new FormGroup({
-      name: new FormControl(''),
-      description: new FormControl(''),
-      thumbnail: new FormGroup({
-        path: new FormControl(''),
-        extension: new FormControl(''),
-      }),
+  searchCharacter(event: any){
+    const id = event.target.value
 
+    this.listCharacters = this.listCharacters!.filter((element: { id: number; }) => {
+      return element.id == id;
     })
+
+
   }
 
 }

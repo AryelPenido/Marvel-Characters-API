@@ -10,7 +10,7 @@
     </div>
 
     <div *ngIf="hoveringcharacter" class="card__face card__face--back">
-      <p class="small__desc"> {{character.description}}</p>
+      <p class="small__desc"> {{character.description ? character.description : 'Description not Found!' }}</p>
       <p class="name"> {{character.name}}</p>
       <button (click)="getDetails()">Details</button>
     </div>
