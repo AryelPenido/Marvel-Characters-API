@@ -1,0 +1,24 @@
+:root{
+  --primary: #272343;
+$secondary: #e3f6f5;
+$tertiary:#bae8e8;
+$white: #fff;
+
+}
+
+.nav{
+  height: 60px;
+  background-color:#272343;
+
+  margin: 0px;
+  padding: 0px;
+
+  display:flex;
+  align-items: center;
+
+  p{
+    font-weight: 600;
+    color:#FFF;
+    margin-left: 1rem;
+  }
+}

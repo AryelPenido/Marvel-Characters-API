@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  Characters: any = []
+
   OneCharacter: any;
   constructor(private apiService: ApiService) { }
 
@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
 
   }
 
+  listCharacters: any = []
   getAllCharacters(){
     this.apiService.getCharacters().subscribe((result) =>{
-      this.Characters = result;
-      console.log(this.Characters)
+      this.listCharacters = result;
+      console.log(this.listCharacters)
     })
   }
 

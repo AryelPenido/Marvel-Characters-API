@@ -21,7 +21,5 @@ export class ApiService {
     return this.http.get<any>(this.baseUrl)
     .pipe(map((data: any) => data.data.results))
 
-
-
   }
 }
