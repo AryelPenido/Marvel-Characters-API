@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor(private router: Router) {
+  id: any;
+
+  constructor(private router: Router,
+              private apiService: ApiService) {
     if (this.router.getCurrentNavigation() != null) {
-      const id = this.router.getCurrentNavigation()!.extras.state;
-      console.log("id: ", id)
+      this.id = this.router.getCurrentNavigation()!.extras.state;
+
     }
   }
+
+  character:any
   ngOnInit(): void {
+    this.character = this.apiService.getCharacterById(this.id)
   }
 
 }

@@ -42,5 +42,26 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+
+router.get('/:id/comics', async (req, res) => {
+  const id = Number(req.params.id);
+
+  console.log(req.params);
+  if (!Number.isNaN(id)) {
+    const urlString = `https://gateway.marvel.com:443/v1/public/characters/${id}/comics`;
+    const url = createUrl(urlString);
+    
+
+    try {
+      const characters = await fetchMarvelAPI(url);
+      res.send(characters);
+    } catch (e) {
+      res.status(500).send();
+    }
+  } else {
+    res.status(500).send({ error: 'Please provide an id!' });
+  }
+});
+
   
   module.exports = router;
