@@ -1,18 +1,19 @@
-<div class="container-fluid">
+<div class="container__infos">
   <div class="backbutton"></div>
-  <p> {{character.character.name }}</p>
+  <p class="title"> {{character.character.name }}</p>
   <div class="first">
 
 
     <img src={{character.character.thumbnail.path}}.{{character.character.thumbnail.extension}} alt="">
     <p class="description">
-      {{character.character.description ? character.character.description : 'Description not Found!' }}
+      {{character.character.description ? character.character.description+'See Some Comics bellow' : 'Description not Found!' }}
     </p>
 
   </div>
+</div>
   <div class="second">
-    <p>Comics</p>
-      <div class="container">
+    <p class="second__title">Comics</p>
+      <div class="container__cards">
         <app-card [typeInput]="type" [character]="item" *ngFor="let item of comics"></app-card>
       </div>
     <div class="card">
@@ -21,4 +22,4 @@
   </div>
 
 
-</div>
+

@@ -20,20 +20,21 @@
 
   <div
   *ngIf="typeInput == 'comic'"
-  
+  (mouseover)="hoveringcharacter=true"
+  (mouseout)="hoveringcharacter=false"
   class="character">
     <div *ngIf="!hoveringcharacter" class="card__face card__face--front">
       <img class="comic_Image" src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="">
       <p>{{character.title}}</p>
     </div>
 
-    <!--
+
     <div *ngIf="hoveringcharacter" class="card__face card__face--back">
       <p class="small__desc"> {{character.description ? character.description : 'Description not Found!' }}</p>
       <p>{{character.title}}</p>
 
     </div>
-    -->
+
 
   </div>
 

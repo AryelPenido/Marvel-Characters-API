@@ -11,7 +11,7 @@ function createUrl(urlString) {
   url.searchParams.set('ts', ts);
   url.searchParams.set('apikey', publicKey);
   url.searchParams.set('hash', hash);
-  url.searchParams.set('limit', 42);
+  url.searchParams.set('limit', 99);
   return url;
 }
 

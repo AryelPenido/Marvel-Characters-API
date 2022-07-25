@@ -1,4 +1,4 @@
-.container{
+.container__cards{
   display: flex;
   margin-top: 2rem;
   list-style: none;
@@ -14,9 +14,53 @@
   flex-wrap: wrap;
 }
 
+.container__infos{
+  margin:0;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+
+
+
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+
+
+}
+
+
 .first{
   display: flex;
   height: 500px;
 
+  padding: 1rem;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+  background-color: #5d0406;
+  color: #ffff;
 
+  .description{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+  }
+  img{
+    object-fit: cover;
+  }
+
+}
+
+.second__title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 2rem;
 }
