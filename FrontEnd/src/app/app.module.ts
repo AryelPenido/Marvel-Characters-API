@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CharacterDetailsComponent,
-    CardComponent
+    CardComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

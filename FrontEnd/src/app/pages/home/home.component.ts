@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  loading: boolean = false;
   constructor(private apiService: ApiService,
               private router: Router) { }
 
@@ -24,9 +25,11 @@ export class HomeComponent implements OnInit {
   listCharacters!: any;
   type:string = 'character'
   getAllCharacters(){
-
+    this.loading = true;
     this.apiService.getCharacters().subscribe((result) =>{
+
       this.listCharacters = result;
+      this.loading = false;
       console.log(this.listCharacters)
     })
   }

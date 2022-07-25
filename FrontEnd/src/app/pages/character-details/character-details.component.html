@@ -13,6 +13,7 @@
 </div>
   <div class="second">
     <p class="second__title">Comics</p>
+    <app-spinner class="spinner" *ngIf="loading"></app-spinner>
       <div class="container__cards">
         <app-card [typeInput]="type" [character]="item" *ngFor="let item of comics"></app-card>
       </div>

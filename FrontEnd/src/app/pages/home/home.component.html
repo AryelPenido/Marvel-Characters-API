@@ -1,4 +1,5 @@
 <div class="content">
+
   <div class="filter">
     <p>Search for Character</p>
     <select (change)="searchCharacter($event)">
@@ -6,9 +7,11 @@
         {{character.name}}
       </option>
   </select>
+
   </div>
 
   <div  class="Cards">
+    <app-spinner *ngIf="loading"></app-spinner>
     <app-card [typeInput]="type" [character]="character" *ngFor="let character of listCharacters"></app-card>
   </div>
 </div>

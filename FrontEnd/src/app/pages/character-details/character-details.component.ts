@@ -12,6 +12,7 @@ export class CharacterDetailsComponent implements OnInit {
 
   id: any;
   character:any;
+  loading:boolean = false;
   constructor(private router: Router,
               private apiService: ApiService) {
 
@@ -27,10 +28,10 @@ export class CharacterDetailsComponent implements OnInit {
   type:string='comic';
   ngOnInit(): void {
 
-    console.log("character",this.character);
+    this.loading = true
     this.apiService.getComicsByCharacterId(this.character.character.id).subscribe(res=>{
       this.comics = res;
-     console.log("this.comics", this.comics)
+      this.loading = false;
 
     });
 
