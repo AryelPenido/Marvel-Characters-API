@@ -69,3 +69,33 @@
   display:flex;
   justify-content: center;
 }
+
+
+
+@media (max-width: 770px) {
+  .first {
+    height: 300px !important;
+    display: flex;
+    align-items: center;
+  }
+  img {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center !important;
+    margin: 0;
+    }
+
+    .description {
+    height: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+  .description {
+    font-size: 12px;
+  }
+}
+
+
