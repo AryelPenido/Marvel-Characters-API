@@ -11,25 +11,31 @@ import { map } from 'rxjs';
 export class CharacterDetailsComponent implements OnInit {
 
   id: any;
-
+  character:any;
   constructor(private router: Router,
               private apiService: ApiService) {
-                /*
+
     if (this.router.getCurrentNavigation() != null) {
-      this.id = this.router.getCurrentNavigation()!.extras.state;
+      this.character = this.router.getCurrentNavigation()!.extras.state;
 
     }
-    */
+
   }
 
-  character:any;
+
   comics:any;
+  type:string='comic';
   ngOnInit(): void {
 
-    this.apiService.getComicsByCharacterId(1011334).subscribe(res=>{
+    console.log("character",this.character);
+    this.apiService.getComicsByCharacterId(this.character.character.id).subscribe(res=>{
       this.comics = res;
      console.log("this.comics", this.comics)
+
     });
+
+
+
 
 
   }

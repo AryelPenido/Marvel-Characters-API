@@ -20,7 +20,7 @@ export class ApiService {
   getCharacterById(id:number): Observable<any>{
 
     return this.http.get<any>(`${this.baseUrl}?id=${id}`)
-    //.pipe(map((data: any) => data.data.results))
+    .pipe(map((data: any) => data.data.results))
 
 
 
@@ -28,7 +28,7 @@ export class ApiService {
 
   getComicsByCharacterId(id:number): Observable<any>{
     console.log("chamou service",`${this.baseUrl}/${id}/comics`)
-    return this.http.get<any>(`${this.baseUrl}/${id}`).pipe(map((data: any) => data.data.results[0].comics.items))
+    return this.http.get<any>(`${this.baseUrl}/${id}/comics`).pipe(map((data: any) => data.data.results))
 
   }
 }

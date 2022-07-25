@@ -1,17 +1,20 @@
 <div class="container-fluid">
   <div class="backbutton"></div>
+  <p> {{character.character.name }}</p>
   <div class="first">
-    <!--
-    <p> {{character.name  | async}}</p>
-    <img src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="">
+
+
+    <img src={{character.character.thumbnail.path}}.{{character.character.thumbnail.extension}} alt="">
     <p class="description">
-      {{character.description ? character.description : 'Description not Found!' }}
+      {{character.character.description ? character.character.description : 'Description not Found!' }}
     </p>
-    -->
+
   </div>
   <div class="second">
     <p>Comics</p>
-
+      <div class="container">
+        <app-card [typeInput]="type" [character]="item" *ngFor="let item of comics"></app-card>
+      </div>
     <div class="card">
       <img src="" alt="">
     </div>

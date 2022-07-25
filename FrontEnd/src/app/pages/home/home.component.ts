@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   listCharacters!: any;
+  type:string = 'character'
   getAllCharacters(){
 
     this.apiService.getCharacters().subscribe((result) =>{

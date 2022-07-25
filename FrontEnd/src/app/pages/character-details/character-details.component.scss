@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  margin-top: 2rem;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.first{
+  display: flex;
+  height: 500px;
+
+
+}

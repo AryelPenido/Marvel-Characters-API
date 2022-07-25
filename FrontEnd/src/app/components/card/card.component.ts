@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   hoveringcharacter: boolean = false;
 
   @Input() character: any;
+  @Input() typeInput: any;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class CardComponent implements OnInit {
 
 
   getDetails(){
-    this.router.navigate(['character-details'], { state: { id: this.character.id } });
+    this.router.navigate(['character-details'], { state: { character: this.character} });
   }
 
 }
